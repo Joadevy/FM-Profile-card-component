@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bubble-color: hsl(185, 75%, 39%);
+    --tittle-color: hsl(229, 23%, 23%);
+    --text-color: hsl(227, 10%, 46%);
+    --neutral-color: hsl(0, 0%, 59%);
+}
+
+body {
+    background-color: var(--bubble-color);
+    font-size: 18px;
+    height: 100vh;
+    font-family:  'Kumbh Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bubble-cont{
+    max-width: 50vw;
+    max-height: 50vh;
+    position: absolute;
+    z-index: -10;
+   
+}
+
+.top img {
+    width: 100%;
+    transform: rotate(20deg);
+    filter: opacity(.35);
+}
+
+.bot img {
+    width: 100%;
+    filter: opacity(.9);
+}
+
+.top {
+    left: 0;
+    top: 0;
+    transform: translate(-100px, -50px)
+}
+
+.bot {
+    right: 0;
+    bottom: 0;
+    transform: translate(100px, 50px)
+}
+
+.top, .bot {
+    animation: 2s bubbles forwards;
+}
+
+.card-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    max-width: 400px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.pattern-cont {
+    width: 100%;
+    height: 100%;
+}
+
+.pattern-img {
+    width: 100%;
+    height: 100%;
+}
+
+.profile-img {
+    position: absolute;
+    top:110px;
+    z-index: 10;
+    border: 3px solid whitesmoke;
+    border-radius: 50%;
+}
+
+.data-cont {
+    background-color: whitesmoke;
+    width: 100%;
+    padding: 2rem;
+    height: 65%;
+}
+
+.data-personal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    
+}
+
+.name {
+    margin-top: 1.5rem;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--tittle-color);
+}
+
+.age, .location{
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.data-social {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.social-cont {
+    text-align: center;
+}
+
+.social-cont h3 {
+    font-weight: 700;
+    color: var(--tittle-color);
+    font-size: 18px;
+}
+
+.social-cont p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-color);
+    letter-spacing: 1.5px;
+}
+
+/* animation bubbles */
+@keyframes bubbles {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* responsive - mobile */
+
+@media screen and (max-width:375px) {
+    .bubble-cont{
+       max-width: 75vw;
+    }
+    
+    .top img {
+        width: 100%;
+        filter: opacity(.35);
+    }
+    
+    .top {
+        left: -100px;
+        top: 100px;
+    }
+    
+    .bot {
+        right: -100px;
+        bottom:0px;
+    }
+}
